@@ -119,7 +119,9 @@ const Home = ({query, search}) => {
   return (
     <div className='pt-12 p-4 grid grid-cols-4 h-100%'>
       {news.filter(data => data.title.includes(search)).map((data, index) => 
-      <Link key={index} onClick={() => addNews(data)} state={{data: data}} to='/news'>
+      {
+        const id = data.url.substr(-10, 10);
+      return <Link key={index} onClick={() => addNews(data)} state={{data: data}} to={`/news/${id}`}>
         <div className="max-w-sm rounded overflow-hidden shadow-lg">
           <img className="w-full" src={data.urlToImage} alt={data.title} />
           <div className="px-6 py-4">
@@ -135,7 +137,7 @@ const Home = ({query, search}) => {
           </div>
         </div>
       </Link>
-      )}
+})}
     </div>
   )
 }

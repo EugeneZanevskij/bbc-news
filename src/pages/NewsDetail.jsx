@@ -14,7 +14,7 @@ const NewsDetail = () => {
         <img src={data.urlToImage} alt={data.title} />
       </div>
       <div>
-        <Comments id={data.url.substr(-10, 10)} />
+        <Comments />
       </div>
     </div>
   )
