@@ -6,7 +6,7 @@ import { db } from '../firebase/setup';
 const Home = ({query, search}) => {
   const [news, setNews] = useState([]);
   const getNews = () => {
-    fetch(`https://newsapi.org/v2/everything?q=${query}&from=2023-10-11&sortBy=popularity&pageSize=20&page=1&apiKey=${import.meta.env.VITE_API_KEY}`)
+    fetch(`https://newsapi.org/v2/everything?q=${query}&from=2023-12-04&sortBy=popularity&pageSize=20&page=1&apiKey=${import.meta.env.VITE_API_KEY}`)
       .then(res => res.json())
       .then(json => setNews(json.articles))
   }
